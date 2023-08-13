@@ -1,11 +1,6 @@
-body {
-  background-color: black;
-}
+body {background-color: black;}
 
-img
-{
-  border-radius: 30px;
-}
+img {border-radius: 30px;}
 
 .header {
   color: white;
@@ -22,40 +17,6 @@ img
 
 .coding {
   color: violet;
-}
-
-@media (max-width: 1000px) {
-  .header {
-    color: white;
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    font-size: 100px;
-    text-align: center;
-    align-items: center;
-  }
-  .mera {
-    border-radius: 30px;
-    height: 50vh;
-    width: 33vh;
-  }
-}
-
-@media (max-width: 700px) {
-  .header {
-    color: white;
-    margin: 20px;
-    display: flex;
-    flex-direction: column;
-    font-size: 80px;
-    text-align: center;
-    align-items: center;
-  }
-  .mera {
-    border-radius: 30px;
-    height: 40vh;
-    width: 33vh;
-  }
 }
 
 .pun {
@@ -83,26 +44,6 @@ img
   width: 110vh;
 }
 
-@media(max-width: 700px)
-{
-  .card-container
-  {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .aes
-  {
-    height: 40vh;
-    margin: 20px;
-  }
-  .lan
-  {
-    height: 40vh;
-    margin: 20px;
-  }
-
-}
 
 .footer
 {
@@ -130,11 +71,8 @@ footer
 
 .logo
 {
-  display: grid;
-  grid-template-columns: 200px 200px 200px 200px;
-  gap: 50px;
-  padding-top: 50px;
-  margin-left: 490px;
+  display: flex;
+  justify-content: center;
 }
 
 .size
@@ -147,3 +85,101 @@ footer
   height: 20%;
 }
 
+
+@media(max-width: 1000px)
+{
+  .header {
+    color: white;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+  }
+  .mera {
+    border-radius: 30px;
+    height: 50vh;
+    width: 33vh;
+  }
+  .card-container
+  {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0px;
+  }
+  .aes
+  {
+    width: 40vh;
+    margin: 20px;
+  }
+  .lan
+  {
+    height: 60vh;
+    width: 80vb;
+    margin: 20px;
+  }
+  
+  .logo
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .size
+  {
+    width: 10%;
+  }
+  
+  .sizeb
+  {
+    width: 7%;
+  } 
+
+}
+
+@media(max-width: 700px)
+{
+  .header {
+    color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+  }
+  .mera {
+    border-radius: 30px;
+    height: 50vh;
+    width: 33vh;
+  }
+
+  .card-container
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .aes
+  {
+    height: 40vh;
+    width: 27vh;
+    margin: 20px;
+  }
+  .lan
+  {
+    height: 27vh;
+    width: 40vh;
+    margin: 20px;
+  }
+  .footer
+  {
+    margin-left: 17px;
+    color: white;
+    font-size: 50px;
+  }
+}
