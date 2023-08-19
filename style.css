@@ -197,6 +197,14 @@ footer
     text-align: center;
     align-items: center;
   }
+
+  .he
+  {
+    font-size: 50px;
+    padding-top: 50px;
+  }
+
+
   .mera {
     border-radius: 30px;
     height: 50vh;
@@ -241,7 +249,7 @@ footer
 
   .card {
     perspective: 150rem;
-    margin: 2em auto;
+    margin: 0em auto;
     height: 35rem;
     width: 25rem;
     max-width: 400px;
@@ -257,7 +265,7 @@ footer
       backface-visibility: hidden;
       position: absolute;
       top: 40px;
-      left: 60px;
+      left: 40px;
       width: 80%;
       padding: 2rem;
       color: white;
@@ -280,6 +288,12 @@ footer
     border-radius: 30px;
     height: 50vh;
     width: 33vh;
+  }
+
+  .he
+  {
+    font-size: 30px;
+    padding-top: 100px;
   }
 
   .card-container
@@ -320,7 +334,7 @@ footer
   
   .card {
     perspective: 150rem;
-    margin: 2em auto;
+    margin: 0rem auto;
     height: 20rem;
     width: 15rem;
     max-width: 400px;
