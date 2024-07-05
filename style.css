@@ -1,0 +1,387 @@
+body {background-color: black;}
+
+img {border-radius: 30px;}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header {
+  color: white;
+  margin: 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+  font-size: 120px;
+}
+
+/* Add margin to the navbar brand */
+.navbar-brand {
+  margin-left: 15px; /* Adjust as needed */
+}
+
+/* Add margin to the last nav item */
+.navbar-nav .nav-item:last-child {
+  margin-right: 15px; /* Adjust as needed */
+}
+
+/* Add some padding to the navbar items */
+.navbar-nav .nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.mera {
+  height: 80vh;
+}
+
+.btn-shine {
+  color: violet;
+  font-weight:500;
+}
+
+
+
+.pun {
+  color: rgba(255, 255, 255, 0.09);
+  font-size: 50px;
+}
+
+.projects
+{
+  font-size: 80px;
+  color: white;
+  text-align: center;
+}
+
+.fade-in-div
+{
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in
+{
+  opacity: 1;
+}
+
+.aes
+{
+  height: 70vh;
+  margin: 30px;
+}
+.lan
+{
+  height: 70vh;
+  margin: 30px;
+  width: 110vh;
+  border-radius: 20px;
+}
+
+
+.footer
+{
+  margin-left: 30px;
+  color: white;
+  font-size: 80px;
+}
+
+.skills
+{
+  margin: 100px;
+  text-align: center;
+  font-size: 80px;
+  color: white;
+}
+
+.skill
+{
+  border-radius: 15px;
+}
+
+footer
+{
+  background-color: rgba(215, 207, 207, 0.091);
+  margin-top: 200px;
+  text-align: center;
+  color: white;
+  font-size: 80px;
+}
+
+.logo
+{
+  display: flex;
+  justify-content: center;
+}
+
+.size
+{
+  height: 20%;
+}
+
+.sizeb
+{
+  height: 20%;
+}
+
+
+@media(max-width: 1000px)
+{
+  .header {
+    color: white;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    font-size: 60px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .projects
+  {
+    font-size: 50px;
+    padding-top: 50px;
+  }
+
+
+  .mera {
+    border-radius: 30px;
+    height: 50vh;
+    width: 33vh;
+  }
+  .aes
+  {
+    width: 40vh;
+    margin: 20px;
+  }
+  .lan
+  {
+    height: 60vh;
+    width: 80vb;
+    margin: 20px;
+  }
+  
+  .logo
+  {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .size
+  {
+    width: 10%;
+  }
+  
+  .sizeb
+  {
+    width: 7%;
+  } 
+}
+
+@media(max-width: 700px)
+{
+  .header {
+    color: white;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 50px;
+    text-align: center;
+    align-items: center;
+  }
+  .mera {
+    border-radius: 30px;
+    height: 50vh;
+    width: 33vh;
+  }
+
+  .projects
+  {
+    visibility:hidden;
+  }
+  .aes
+  {
+    height: 40vh;
+    width: 27vh;
+    margin: 20px;
+  }
+  .lan
+  {
+    height: 27vh;
+    width: 40vh;
+    margin: 20px;
+  }
+  .footer
+  {
+    margin-left: 17px;
+    color: white;
+    font-size: 50px;
+  }
+  footer
+  {
+    font-size: 50px;
+  }
+  .skill
+  {
+    width: 15vb;
+    margin-bottom: 20px;
+  }
+  .card {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+    margin: auto; /* Center the card container on the page */
+    top: 50%;
+  }
+  
+  /* for all social containers*/
+  .socialContainer {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgb(44, 44, 44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition-duration: .3s;
+  }
+  .socialSvg {
+    width: 17px;
+  }
+}
+
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  margin: auto; /* Center the card container on the page */
+  top: 50%;
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #ea4343;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 27px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+.project-card {
+    width: 45%;
+    margin: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.project-card img {
+    width: 100%;
+    border-radius: 0px;
+    height: auto;
+    display: block;
+}
+.project-description {
+    padding-left: 10px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #333;
+}
+.project-card a {
+  color: inherit; 
+  text-decoration: none; 
+  display: block; 
+}
+
+.autoblur {
+  animation: autoBlurAnimation both;
+  animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+  0% {
+    filter: blur(40px);
+  } 45%,55% {
+    filter: blur(0px);
+  } 100% {
+    filter: blur(40px);
+  }
+}
+
