@@ -104,6 +104,13 @@ body {
 /* ---------------------------------- */
 /* Utilities                          */
 /* ---------------------------------- */
+
+/* native cursor is hidden only while the custom cursor component is mounted */
+.custom-cursor,
+.custom-cursor * {
+  cursor: none !important;
+}
+
 .bg-dots {
   background-image: radial-gradient(var(--dot) 1px, transparent 1px);
   background-size: 24px 24px;

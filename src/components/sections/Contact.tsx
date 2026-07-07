@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
+import { ContactForm } from "@/components/ui/ContactForm";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/data/site";
 
@@ -21,38 +22,43 @@ export function Contact() {
 
         <Reveal>
           <div className="rounded-lg border border-border bg-surface p-6 sm:p-8">
-            <p className="font-mono text-sm text-muted">
-              <span className="text-accent">$</span> echo &quot;hello&quot; |
-              mail {site.email}
-            </p>
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:gap-12">
+              {/* left: direct channels */}
+              <div className="flex flex-col">
+                <p className="font-mono text-sm text-muted">
+                  <span className="text-accent">$</span> echo &quot;hello&quot;{" "}
+                  | mail {site.email}
+                </p>
 
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <ButtonLink href={`mailto:${site.email}`} variant="primary">
-                say hello <span aria-hidden="true">↗</span>
-              </ButtonLink>
-              <ButtonLink href={site.resumePath} download>
-                resume <span aria-hidden="true">↓</span>
-              </ButtonLink>
-            </div>
+                <div className="mt-6">
+                  <ButtonLink href={site.resumePath} download>
+                    resume <span aria-hidden="true">↓</span>
+                  </ButtonLink>
+                </div>
 
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 border-t border-border pt-6 font-mono text-sm">
-              {socials.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
-                >
-                  {s.label} <span aria-hidden="true">↗</span>
-                </a>
-              ))}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
-              >
-                {site.email}
-              </a>
+                <div className="mt-8 flex flex-col gap-2.5 border-t border-border pt-6 font-mono text-sm lg:mt-auto">
+                  {socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-fit text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
+                    >
+                      {s.label} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                  <a
+                    href={`mailto:${site.email}`}
+                    className="w-fit text-muted underline-offset-4 transition-colors hover:text-accent hover:underline"
+                  >
+                    {site.email}
+                  </a>
+                </div>
+              </div>
+
+              {/* right: message form */}
+              <ContactForm />
             </div>
           </div>
         </Reveal>

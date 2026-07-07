@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Cursor } from "@/components/ui/Cursor";
 import { ToastProvider } from "@/components/ui/Toast";
 import { site } from "@/data/site";
 import { ThemeProvider, themeInitScript } from "@/hooks/useTheme";
@@ -102,6 +103,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ToastProvider>{children}</ToastProvider>
         </ThemeProvider>
+        <Cursor />
       </body>
     </html>
   );

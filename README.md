@@ -10,6 +10,8 @@ Built with **Next.js (App Router) · TypeScript · Tailwind CSS v4 · Framer Mot
 - Dark/light theme, persisted in `localStorage`, applied pre-paint (no flash)
 - Interactive LeetCode-style contribution heatmap: milestone cells jump to their section, other active cells jump somewhere random (with a toast)
 - Subtle Framer Motion scroll reveals, `prefers-reduced-motion` respected throughout
+- Custom circular cursor that pixel-inverts the colors beneath it (`mix-blend-difference`), fine-pointer devices only
+- Contact form with configurable endpoint + mailto fallback
 - Fully responsive, accessible (semantic landmarks, keyboard-operable heatmap, skip link)
 - SEO: metadata, OpenGraph, JSON-LD Person schema, sitemap + robots
 
@@ -35,7 +37,11 @@ All copy lives in typed modules under `src/data/` — edit those, not the compon
 | `education.ts` | degree, certifications, hero stats |
 | `contributions.ts` | heatmap data + milestones |
 
-> Some profile links are still `CHANGE-ME` placeholders in `src/data/site.ts` — search for `TODO(vishal)`.
+### Contact form
+
+The contact form POSTs JSON (`{name, email, message}`) to `NEXT_PUBLIC_CONTACT_ENDPOINT`
+(see `.env.example` — Formspree/Web3Forms both work). When unset, it falls back to
+opening the visitor's mail client with the message pre-filled.
 
 ## Deploy
 

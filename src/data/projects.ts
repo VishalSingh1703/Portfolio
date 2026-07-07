@@ -23,7 +23,7 @@ export const projects: Project[] = [
     ],
     tech: ["Node.js", "React", "Gemini API", "LLM", "Embeddings", "PDF Generation"],
     links: [
-      { label: "Live App", href: "https://CHANGE-ME.example.com" }, // TODO(vishal): real ExamChecker URL
+      { label: "Live App", href: "https://exam-checker-virid.vercel.app/" },
     ],
     featured: true,
   },
