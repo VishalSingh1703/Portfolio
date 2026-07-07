@@ -24,7 +24,7 @@ export const certifications: Certification[] = [
   {
     title: "870+ LeetCode Problems Solved · 600+ Day Streak",
     issuer: "LeetCode",
-    href: "https://leetcode.com/u/CHANGE-ME", // TODO(vishal): real LeetCode URL (kept in sync with site.ts)
+    href: "https://leetcode.com/u/Coding_Brain/",
   },
 ];
 

@@ -21,8 +21,8 @@ export const site = {
   url: "https://vishalsingh-portfolio.vercel.app",
   links: {
     github: "https://github.com/VishalSingh1703",
-    linkedin: "https://www.linkedin.com/in/CHANGE-ME", // TODO(vishal): real LinkedIn URL
-    leetcode: "https://leetcode.com/u/CHANGE-ME", // TODO(vishal): real LeetCode URL
+    linkedin: "https://www.linkedin.com/in/vieshalsingh/",
+    leetcode: "https://leetcode.com/u/Coding_Brain/",
   },
 } as const;
 

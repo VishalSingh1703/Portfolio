@@ -28,6 +28,8 @@ interface HoverState {
   /** cell center, relative to the grid wrapper */
   x: number;
   y: number;
+  /** top rows flip the tooltip below the cell so it can't overlap content above */
+  below: boolean;
 }
 
 /**
@@ -69,10 +71,19 @@ export function ContributionGrid() {
       if (!wrapper) return;
       const rect = el.getBoundingClientRect();
       const wrapRect = wrapper.getBoundingClientRect();
+      const below = rect.top - wrapRect.top < 56; // not enough room above
+      // content-space coords (survive horizontal scroll), clamped so the
+      // centered tooltip can't be clipped at either edge of the container
+      const half = cell.milestone ? 160 : 95;
+      const rawX = rect.left - wrapRect.left + wrapper.scrollLeft + rect.width / 2;
+      const maxX = Math.max(wrapper.scrollWidth, wrapRect.width) - half;
       setHover({
         cell,
-        x: rect.left - wrapRect.left + rect.width / 2,
-        y: rect.top - wrapRect.top,
+        x: Math.min(Math.max(rawX, half), maxX),
+        y:
+          (below ? rect.bottom - wrapRect.top : rect.top - wrapRect.top) +
+          wrapper.scrollTop,
+        below,
       });
     },
     []
@@ -108,8 +119,11 @@ export function ContributionGrid() {
           {hover && (
             <div
               role="tooltip"
-              className="pointer-events-none absolute z-10 -translate-x-1/2 -translate-y-full whitespace-nowrap rounded border border-border-strong bg-surface-2 px-2.5 py-1.5 font-mono text-[11px] text-foreground shadow-md"
-              style={{ left: hover.x, top: hover.y - 6 }}
+              className={
+                "pointer-events-none absolute z-10 -translate-x-1/2 whitespace-nowrap rounded border border-border-strong bg-surface-2 px-2.5 py-1.5 font-mono text-[11px] text-foreground shadow-md" +
+                (hover.below ? "" : " -translate-y-full")
+              }
+              style={{ left: hover.x, top: hover.below ? hover.y + 6 : hover.y - 6 }}
             >
               {hover.cell.milestone ? (
                 <>
