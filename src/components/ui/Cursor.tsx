@@ -28,6 +28,12 @@ export function Cursor() {
     : { stiffness: 700, damping: 45, mass: 0.6 };
   const sx = useSpring(x, springConfig);
   const sy = useSpring(y, springConfig);
+  // the halo runs on softer springs so it drifts a beat behind the dot
+  const haloConfig = reduced
+    ? { stiffness: 4000, damping: 200 }
+    : { stiffness: 260, damping: 28, mass: 0.9 };
+  const hx = useSpring(x, haloConfig);
+  const hy = useSpring(y, haloConfig);
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)");
@@ -76,17 +82,42 @@ export function Cursor() {
   if (!enabled) return null;
 
   return (
-    <motion.div
-      aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[100] rounded-full bg-white mix-blend-difference"
-      style={{ x: sx, y: sy, translateX: "-50%", translateY: "-50%" }}
-      animate={{
-        width: hoveringInteractive ? 34 : 18,
-        height: hoveringInteractive ? 34 : 18,
-        scale: pressed ? 0.8 : 1,
-        opacity: visible ? 1 : 0,
-      }}
-      transition={{ duration: reduced ? 0 : 0.15, ease: "easeOut" }}
-    />
+    <>
+      {/* halo: a soft ring that also blends with `difference`, so its
+          gradient is the pixel-inverse of whatever sits underneath — the
+          opposite of the solid dot, fading out at both edges */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none fixed left-0 top-0 z-[99] rounded-full mix-blend-difference"
+        style={{
+          x: hx,
+          y: hy,
+          translateX: "-50%",
+          translateY: "-50%",
+          background:
+            "radial-gradient(circle, rgba(255,255,255,0) 38%, rgba(255,255,255,0.45) 58%, rgba(255,255,255,0) 78%)",
+        }}
+        animate={{
+          width: hoveringInteractive ? 84 : 56,
+          height: hoveringInteractive ? 84 : 56,
+          scale: pressed ? 0.85 : 1,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{ duration: reduced ? 0 : 0.18, ease: "easeOut" }}
+      />
+      {/* dot */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none fixed left-0 top-0 z-[100] rounded-full bg-white mix-blend-difference"
+        style={{ x: sx, y: sy, translateX: "-50%", translateY: "-50%" }}
+        animate={{
+          width: hoveringInteractive ? 34 : 18,
+          height: hoveringInteractive ? 34 : 18,
+          scale: pressed ? 0.8 : 1,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{ duration: reduced ? 0 : 0.15, ease: "easeOut" }}
+      />
+    </>
   );
 }
