@@ -17,8 +17,7 @@ export function Hero() {
 
   return (
     <section id="top" aria-label="Introduction" className="relative overflow-hidden">
-      {/* subtle animated background: dot grid + two slow-drifting glows */}
-      <div className="pointer-events-none absolute inset-0 bg-dots" aria-hidden="true" />
+      {/* subtle animated background: two slow-drifting glows over the global '+' grid */}
       <div
         className="hero-glow pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full opacity-[0.13] blur-3xl"
         style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 65%)" }}
@@ -29,13 +28,6 @@ export function Hero() {
         style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 65%)" }}
         aria-hidden="true"
       />
-      {/* fade the dots out toward the bottom so the next section starts clean */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
-        style={{ background: "linear-gradient(to bottom, transparent, var(--background))" }}
-        aria-hidden="true"
-      />
-
       <div className="relative mx-auto max-w-5xl px-5 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-32">
         <motion.p {...fadeUp(0)} className="mb-5 font-mono text-sm text-accent">
           $ whoami
