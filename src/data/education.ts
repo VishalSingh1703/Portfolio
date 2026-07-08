@@ -31,6 +31,5 @@ export const certifications: Certification[] = [
 export const stats = [
   { value: "870+", label: "LeetCode problems solved" },
   { value: "600+", label: "day coding streak" },
-  { value: "95%+", label: "schema-compliant LLM accuracy" },
   { value: "2×", label: "AWS certified" },
 ];

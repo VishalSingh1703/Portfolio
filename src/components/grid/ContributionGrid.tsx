@@ -105,8 +105,7 @@ export function ContributionGrid() {
       <div className="rounded-lg border border-border bg-surface p-4 sm:p-5">
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <p className="font-mono text-xs text-muted">
-            <span className="text-accent">$</span> git log --oneline — a year
-            of shipping, every day
+            <span className="text-accent">$</span> coding activity
           </p>
           <p className="hidden font-mono text-[11px] text-faint sm:block">
             tip: green squares are clickable · bordered ones are milestones

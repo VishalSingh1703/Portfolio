@@ -8,7 +8,7 @@ export function StatBlock() {
   const reduced = useReducedMotion();
 
   return (
-    <dl className="grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">
+    <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
       {stats.map((stat, i) => (
         <motion.div
           key={stat.label}
