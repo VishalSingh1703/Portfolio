@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { StatBlock } from "@/components/ui/StatBlock";
 import { site } from "@/data/site";
 import { scrollToSection } from "@/lib/scroll";
+import { HeroGlow } from "./HeroGlow";
 
 export function Hero() {
   const reduced = useReducedMotion();
@@ -17,17 +18,9 @@ export function Hero() {
 
   return (
     <section id="top" aria-label="Introduction" className="relative overflow-hidden">
-      {/* subtle animated background: two slow-drifting glows over the global '+' grid */}
-      <div
-        className="hero-glow pointer-events-none absolute -top-32 right-[-10%] h-[420px] w-[420px] rounded-full opacity-[0.13] blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 65%)" }}
-        aria-hidden="true"
-      />
-      <div
-        className="hero-glow-2 pointer-events-none absolute bottom-[-20%] left-[-8%] h-[380px] w-[380px] rounded-full opacity-[0.09] blur-3xl"
-        style={{ background: "radial-gradient(circle, var(--accent) 0%, transparent 65%)" }}
-        aria-hidden="true"
-      />
+      {/* subtle animated background: glows that fade in and out at random
+          spots, over the global '+' marker grid */}
+      <HeroGlow />
       <div className="relative mx-auto max-w-5xl px-5 pb-20 pt-24 sm:px-8 sm:pb-24 sm:pt-32">
         <motion.p {...fadeUp(0)} className="mb-5 font-mono text-sm text-accent">
           $ whoami

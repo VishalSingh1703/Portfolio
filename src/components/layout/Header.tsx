@@ -14,8 +14,14 @@ export function Header() {
 
   const handleNav = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    setOpen(false);
-    scrollToSection(id);
+    if (open) {
+      // wait for the mobile menu to collapse before scrolling, otherwise the
+      // shrinking header shifts the layout mid-scroll and the jump lands wrong
+      setOpen(false);
+      window.setTimeout(() => scrollToSection(id), 260);
+    } else {
+      scrollToSection(id);
+    }
   };
 
   return (
