@@ -12,6 +12,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    name: "Guardian AI",
+    tagline: "Hackathon-Winning · AI-Powered Vehicle Emergency Response",
+    description:
+      "A zero-install, QR-based emergency response platform letting any bystander scan a vehicle's QR code to instantly trigger crash verification and dispatch — awarded 3rd place at the Amadeus × Contentstack Hackathon.",
+    highlights: [
+      "Architected a zero-install, QR-based emergency response platform letting any bystander scan a vehicle's QR code to instantly trigger crash verification and dispatch, spanning a Next.js/React PWA, a FastAPI microservice backend, and a native Kotlin Android app across 3 independently deployed services.",
+      "Engineered an AI-powered computer vision pipeline using the Gemini API to analyze live-captured accident photos against an 80% confidence threshold, blocking false alarms, and integrated a Twilio + Pipecat voice-AI IVR that autonomously calls up to 5 prioritized emergency contacts with 3× automated retry and DTMF response handling.",
+      "Designed a secure PostgreSQL/Supabase schema with Row-Level Security across 3 relational tables to store medical passports and 2–5 emergency contacts per user while enforcing strict PII-privacy invariants — earning 3rd position in the Amadeus × Contentstack Hackathon, judged by a panel including members from Microsoft and Amadeus.",
+    ],
+    tech: ["Next.js", "FastAPI", "Kotlin", "Gemini AI", "Supabase", "Twilio"],
+    links: [],
+    featured: true,
+  },
+  {
     name: "ExamChecker",
     tagline: "AI Handwritten Answer Evaluation Platform",
     period: "Jan 2025 — Mar 2025",
